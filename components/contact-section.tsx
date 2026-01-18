@@ -6,14 +6,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Telefon",
-    value: "+49 (0) 123 456 789",
-    href: "tel:+49123456789",
+    value: "+49 (0) 155 67029482",
+    href: "tel:+4915567029482",
   },
   {
     icon: Mail,
     label: "E-Mail",
-    value: "info@koelbelkehr.de",
-    href: "mailto:info@koelbelkehr.de",
+    value: "info@kölbel-kehr.de",
+    href: "mailto:info@kölbel-kehr.de",
   },
 ]
 

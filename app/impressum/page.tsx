@@ -19,25 +19,26 @@ export default function ImpressumPage() {
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-4">Angaben gemäß § 5 TMG</h2>
             <p className="text-muted-foreground">
-              Schornsteinfeger Meisterbetrieb
+              Kölbel Kehr GmbH i.Gr.
               <br />
-              Thomas Müller
+              Josua Kölbel
               <br />
-              Musterstraße 12
+              Mergenthalerallee 73-75
               <br />
-              12345 Musterstadt
+              65760 Eschborn
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-4">Kontakt</h2>
             <p className="text-muted-foreground">
-              Telefon: +49 (0) 123 456 789
+              Telefon: +4915567029482
               <br />
-              E-Mail: info@schornsteinfeger-meister.de
+              E-Mail: info@kölbel-kehr.de
             </p>
           </section>
 
+            {/*
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-4">
               Berufsbezeichnung und berufsrechtliche Regelungen
@@ -58,22 +59,24 @@ export default function ImpressumPage() {
           </section>
 
           <section>
+            <h2 className="text-xl font-semibold text-foreground mb-4">Aufsichtsbehörde</h2>
+            <p className="text-muted-foreground">
+              Regierungspräsidium Darmstadt
+              <br />
+              Luisenplatz 2
+              <br />
+              64283 Darmstadt
+            </p>
+          </section>
+
+          */}
+
+          <section>
             <h2 className="text-xl font-semibold text-foreground mb-4">Umsatzsteuer-ID</h2>
             <p className="text-muted-foreground">
               Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
               <br />
-              DE 123 456 789
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-foreground mb-4">Aufsichtsbehörde</h2>
-            <p className="text-muted-foreground">
-              Handwerkskammer Musterstadt
-              <br />
-              Musterweg 1
-              <br />
-              12345 Musterstadt
+              beantragt
             </p>
           </section>
 
