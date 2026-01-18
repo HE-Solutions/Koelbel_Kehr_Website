@@ -34,7 +34,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /Koelbel_Kehr_Website
+          NEXT_PUBLIC_BASE_PATH: /
 
       - name: Disable Jekyll
         run: touch out/.nojekyll
