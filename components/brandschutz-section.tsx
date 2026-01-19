@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, Shield, AlertTriangle, Home, Flame } from "lucide-react"
+import {ChevronLeft, ChevronRight, Shield, AlertTriangle, Home, Flame, DropletIcon} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
@@ -10,11 +10,16 @@ const brandschutzItems = [
     {
         icon: AlertTriangle,
         title: "CO-Warnmelder",
-        description: "Schutz vor dem unsichtbaren Killer: Kohlenmonoxid. Wir beraten Sie zur optimalen Platzierung und Installation von CO-Warnmeldern.",
+        description: "Kohlenmonoxid (CO) ist ein geruch- und farbloses Gas, das lebensgefährlich sein kann und oft unbemerkt austritt. Ein CO-Melder warnt frühzeitig vor dieser unsichtbaren Gefahr und kann Leben retten. Die Kölbel Kehr GmbH bietet Ihnen kompetente Beratung sowie die fachgerechte Installation von CO-Meldern an.",
     },
     {
         icon: Flame,
-        title: "Rauchwarnmelder Löschmittelkonzept",
+        title: "Rauchwarnmelder",
+        description: "In Deutschland ist die Pflicht zur Ausstattung von Wohnungen mit Rauchwarnmeldern in den Landesbauordnungen geregelt, in Hessen durch die Hessische Bauordnung (HBO § 14 Abs. 2). Diese schreibt vor, dass Schlafräume, Kinderzimmer und Flure als Rettungswege sowie bestimmte Aufenthaltsräume mindestens mit einem Rauchwarnmelder auszustatten sind. Die Geräte müssen so installiert und betrieben werden, dass Brandrauch frühzeitig erkannt wird. Die Kölbel Kehr GmbH bietet hierzu eine umfassende Beratung, die fachgerechte Installation sowie die regelmäßige Überprüfung gemäß DIN 14676 an und trägt damit maßgeblich zur Erhöhung der Sicherheit von Bewohnern und Gebäuden bei.",
+    },
+    {
+        icon: DropletIcon,
+        title: "Löschmittelkonzept",
         description: "Löschmittelkonzepte sind ein zentraler Bestandteil des vorbeugenden Brandschutzes und stellen sicher, dass Art und Anzahl der erforderlichen Feuerlöscher den Vorgaben der ASR A2.2 entsprechen. Sie dienen der Rechtssicherheit und ermöglichen im Brandfall einen wirksamen Ersteinsatz.\n" +
             "Die Kölbel Kehr GmbH erstellt fachgerechte Löschmittelkonzepte gemäß ASR A2.2, abgestimmt auf die individuellen Gegebenheiten und Brandgefährdungen Ihrer Arbeitsstätte.",
     },
@@ -33,37 +38,44 @@ export function BrandschutzSection() {
 
     return (
         <section
-            id="sicherheit"
-            className="py-20 md:py-32 bg-gradient-to-br from-innung-yellow/10 via-innung-yellow/5 to-background"
+            id="brandschutz"
+            className="py-20 md:py-32 relative overflow-hidden bg-gradient-to-br from-innung-red/5 via-background to-background"
         >
-            <div className="container mx-auto px-4">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-innung-red/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-innung-red/5 rounded-full blur-3xl" />
+
+            <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-innung-yellow/20 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    <div className="inline-flex items-center gap-2 bg-innung-red/20 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                         <Shield className="h-4 w-4" />
-                        Sicherheit
+                        Brandschutz
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Ihre Sicherheit</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Brandschutz</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto text-lg text-pretty">
-                        Umfassende Sicherheitsleistungen für ein sorgenfreies Zuhause
+                        Wir brennen für Ihre Sicherheit!
                     </p>
                 </div>
 
                 {/* Desktop Grid */}
-                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {brandschutzItems.map((item) => (
-                        <Card
-                            key={item.title}
-                            className="bg-card border-innung-yellow/20 hover:border-innung-yellow/40 hover:shadow-lg hover:shadow-innung-yellow/10 transition-all group"
-                        >
-                            <CardContent className="p-6">
-                                <div className="w-12 h-12 bg-innung-yellow/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-innung-yellow/30 transition-colors">
-                                    <item.icon className="h-6 w-6 text-yellow-700" />
-                                </div>
-                                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                                <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                            </CardContent>
-                        </Card>
-                    ))}
+
+                <div className="flex justify-center mb-12">
+                    <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 gap-6">
+                        {brandschutzItems.map((item) => (
+                            <Card
+                                key={item.title}
+                                className="bg-card border-innung-red/20 hover:border-innung-red/40 hover:shadow-lg hover:shadow-innung-red/10 transition-all group"
+                            >
+                                <CardContent className="p-6">
+                                    <div className="w-12 h-12 bg-innung-red/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-innung-red/30 transition-colors">
+                                        <item.icon className="h-6 w-6 text-red-700" />
+                                    </div>
+                                    <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Mobile Carousel */}

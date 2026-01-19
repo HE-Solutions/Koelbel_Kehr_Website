@@ -21,7 +21,7 @@ export default function ImpressumPage() {
             <p className="text-muted-foreground">
               Kölbel Kehr GmbH i.Gr.
               <br />
-              Josua Kölbel
+              GF Josua Kölbel
               <br />
               Mergenthalerallee 73-75
               <br />

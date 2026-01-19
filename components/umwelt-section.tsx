@@ -1,12 +1,27 @@
-import { Leaf, Wind, Droplets, Sun } from "lucide-react"
+import {Leaf, Wind, Droplets, Sun, TimerIcon, SproutIcon, Flame, Trees} from "lucide-react"
 
 const umweltItems = [
-  {
-    icon: Wind,
-    title: "BimschV",
-    description:
-        "Die Kölbel Kehr GmbH bietet umfassende Dienstleistungen nach der Ersten Bundesemissionsschutzverordnung (1. BImSchV) an. Wir bieten passende Beratungen zu Brennstoffen, alle wiederkehrenden Tätigkeiten gemäß §15 der 1. BImSchV bis hin zum Nachweis der Vermeidung der schädlichen Umwelteinflüsse/Ableitbedingungen gemäß §19 der 1. BImSchV. So bieten wir eine ganzheitliche und Beratung und Umsetzung aller Emissionsschutzanforderungen.",
-  },
+    {
+        icon: Wind,
+        title: "BimschV",
+        description:
+            "Die Kölbel Kehr GmbH bietet umfassende Dienstleistungen nach der Ersten Bundesemissionsschutzverordnung (1. BImSchV) an. Wir bieten passende Beratungen zu Brennstoffen, alle wiederkehrenden Tätigkeiten gemäß §15 der 1. BImSchV bis hin zum Nachweis der Vermeidung der schädlichen Umwelteinflüsse/Ableitbedingungen gemäß §19 der 1. BImSchV. So bieten wir eine ganzheitliche und Beratung und Umsetzung aller Emissionsschutzanforderungen.",
+    },
+    {
+        icon: SproutIcon,
+        title: "Umweltschonend Heizen",
+        description:
+            "Die Kölbel Kehr GmbH steht Ihnen beratend zur Seite, um die Energieeffizienz Ihrer Liegenschaft nachhaltig zu steigern.\n" +
+            "Dabei unterstützen wir Sie bei der Auswahl des geeigneten Energieträgers sowie der passenden Träger- und Anlagentechnologie.\n" +
+            "So lassen sich Emissionen gezielt reduzieren und ein aktiver Beitrag zum Schutz der Umwelt leisten.",
+    },
+    {
+        icon: Trees,
+        title: "Beratung feste Brennstoffe",
+        description: "Die Kölbel Kehr GmbH bietet fachkundige Beratung zum sicheren und effizienten Betrieb handbeschickter Holz- und Feststoff-Feuerstätten.\n" +
+            "Die Beratung ist gemäß 1. BImSchV §4 Abs. 8 Pflicht bei der Neuerrichtung von Feuerstätten und sorgt dafür, dass Effizienz und Sicherheit Ihrer Anlage optimal gewährleistet sind."
+    },
+
     /*
   {
     icon: Leaf,
@@ -47,7 +62,7 @@ export function UmweltSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-3 lg:grid-cols-3 gap-6">
           {umweltItems.map((item) => (
             <div
               key={item.title}

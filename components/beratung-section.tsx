@@ -11,25 +11,24 @@ const beratungItems = [
     icon: Lightbulb,
     title: "Energieberatung",
     description:
-      "Optimieren Sie Ihre Heizkosten mit unserer professionellen Energieberatung. Wir analysieren Ihren Energieverbrauch und zeigen Einsparpotenziale auf.",
+      "Die Kölbel Kehr GmbH ist zertifizierter Energieberater des Handwerks und Energieeffizienz-Experte.\n" +
+        "Wir bieten professionelle Energieberatung – von der individuellen Sanierungsplanung bis hin zur umfassenden Fördermittelberatung.",
   },
   {
     icon: Thermometer,
-    title: "Heizungsoptimierung",
+    title: "Heizungstausch",
     description:
-      "Effiziente Heizung für weniger Kosten: Wir prüfen Ihre Heizungsanlage und geben Empfehlungen zur Optimierung.",
+      "Die Kölbel Kehr GmbH bietet eine umfassende Beratung zur Steigerung der Effizienz Ihrer Heizungsanlage an.\n" +
+        "Durch fachkundige Analyse helfen wir, Energieverbrauch und Kosten nachhaltig zu senken.\n" +
+        "So leisten Sie einen Beitrag zum Umweltschutz und erhöhen gleichzeitig den Wohnkomfort.",
   },
   {
     icon: FileText,
-    title: "Fördermittelberatung",
+    title: "Energieausweise",
     description:
-      "Profitieren Sie von staatlichen Förderprogrammen. Wir beraten Sie zu aktuellen Förderungsmöglichkeiten für energetische Sanierungen.",
-  },
-  {
-    icon: Wrench,
-    title: "Sanierungsberatung",
-    description:
-      "Ganzheitliche Beratung für die energetische Sanierung Ihres Gebäudes – von der Dämmung bis zur Heizungserneuerung.",
+      "Die Kölbel Kehr GmbH bietet als Energieeffizienz-Experte die Erstellung von Energieausweisen an.\n" +
+        "Ob Verbrauchs- oder Bedarfsausweis – wir beraten Sie fachgerecht und zuverlässig.\n" +
+        "Ein Energieausweis ist erforderlich, wenn Sie eine Immobilie verkaufen oder vermieten möchten.",
   },
 ]
 
@@ -62,7 +61,7 @@ export function BeratungSection() {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 gap-6">
           {beratungItems.map((item) => (
             <Card
               key={item.title}

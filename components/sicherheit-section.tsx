@@ -1,31 +1,33 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, Shield, AlertTriangle, Home, Flame } from "lucide-react"
+import { ChevronLeft, ChevronRight, Shield, BrickWall, Home, Flame } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 const sicherheitItems = [
     {
-        icon: Flame,
-        title: "Rauchabzüge",
-        description: "Regelmäßige Prüfung und Reinigung von Rauchabzügen und Lüftungsanlagen für eine sichere Abgasführung.",
+        icon: BrickWall,
+        title: "Schornstein und Zuluftreinigung",
+        description: "Die Schornsteinreinigung ist eine zentrale Aufgabe des Schornsteinfegerhandwerks und dient der Brandschutzvorsorgesowie der sicheren Nutzung von Feuerungsanlagen. Gemäß der Kehr- und Überprüfungsordnung (KÜO) ist die regelmäßige Reinigung von Feuerstätten, Schornsteinen, Abgas- und Zuluftleitungen verpflichtend. Sie sorgt zudem für den sicheren Abzug von Rauch, Abgasen und Abluft. Zusätzlich informieren Schornsteinfeger über die sichere Nutzung von Feuerungsanlagen, Brennstoffen, Verbrennungsluftversorgung, Brandschutz und aktuelle gesetzliche Vorgaben. Die Kölbel Kehr GmbH bietet diese Leistungen für Schornsteine, Zuluftöffnungen, Abgasleitungen, Kanäle, Verbindungsstücke, Kamin- und Kachelöfen an und erhöht damit die Sicherheit Ihrer Anlagen.",
     },
     {
         icon: Home,
-        title: "Überprüfung nach KÜO",
-        description: "Zweimalige Überprüfung Ihrer Feuerstätten im 7-Jahres-Zeitraum nach gesetzlicher Vorgabe.",
+        title: "Abgaswegeüberprüfung - CO Messung (KÜO)",
+        description: "Regelmäßige Überprüfung, Wartung und Abgasanalyse von Feuerstätten stellen sicher, dass Abgase sicher ins Freie abgeführt werden. Diese Kontrollen sind gemäß der Kehr- und Überprüfungsordnung (KÜO) gesetzlich vorgeschrieben und dienen sowohl Ihrer Sicherheit als auch einem energieeffizienten und kostensparenden Betrieb. Die Kölbel Kehr GmbH bietet diese Leistungen fachgerecht an, übernimmt die erforderlichen Prüfungen und stellt die notwendigen Nachweise sicher, wodurch Effizienz und Sicherheit Ihrer Anlagen nachhaltig erhalten werden.",
     },
     {
-        icon: Shield,
+        icon: Flame,
         title: "Gashausschau",
-        description: "Umfassende Überprüfung aller brandschutzrelevanten Einrichtungen in Wohn- und Gewerbegebäuden.",
+        description: "Gemäß der TRGI 2018 und der daraus resultierenden Verkehrssicherungspflicht sind Eigentümer und Betreiber von Gasfeuerstätten verpflichtet, den sicheren Zustand ihrer Gasanlagen zu gewährleisten und die frei verlegten Gasleitungen regelmäßig zu überprüfen. Diese Verantwortung kann an die Kölbel Kehr GmbH übertragen werden, die die Gasinstallation fachkundig kontrolliert und mögliche Undichtigkeiten frühzeitig erkennt. Dadurch erhöhen sich Sicherheit und Betriebssicherheit, zugleich entsteht eine rechtliche Entlastung durch den Nachweis einer sachgerechten Prüfung.",
     },
     {
         icon: Shield,
         title: "Überprüfung nach DAAV",
-        description: "Umfassende Überprüfung aller brandschutzrelevanten Einrichtungen in Wohn- und Gewerbegebäuden.",
+        description: "Die Kölbel Kehr GmbH bietet Überprüfungen und Kontrollen gemäß DAAV an.\n" +
+            "So wird die Betriebs- und Brandsicherheit Ihrer gewerblich genutzten Dunstabzugsanlage dauerhaft gewährleistet.\n" +
+            "Durch fachgerechte Prüfungen helfen wir, Risiken zu minimieren und gesetzliche Vorgaben einzuhalten.",
     },
 ]
 
