@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
+import { Phone, Mail, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -12,8 +12,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "E-Mail",
-    value: "info@kölbel-kehr.de",
-    href: "mailto:info@kölbel-kehr.de",
+    value: "info@koelbel-kehr.de",
+    href: "mailto:info@koelbel-kehr.de",
   },
 ]
 

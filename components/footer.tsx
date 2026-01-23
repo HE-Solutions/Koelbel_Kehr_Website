@@ -11,8 +11,8 @@ const contactInfo = [
     {
         icon: Mail,
         label: "E-Mail",
-        value: "info@kölbel-kehr.de",
-        href: "mailto:info@kölbel-kehr.de",
+        value: "info@koelbel-kehr.de",
+        href: "mailto:info@koelbel-kehr.de",
     },
 ]
 

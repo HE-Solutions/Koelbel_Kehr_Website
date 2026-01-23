@@ -34,7 +34,7 @@ export default function ImpressumPage() {
             <p className="text-muted-foreground">
               Telefon: +4915567029482
               <br />
-              E-Mail: info@kölbel-kehr.de
+              E-Mail: info@koelbel-kehr.de
             </p>
           </section>
 

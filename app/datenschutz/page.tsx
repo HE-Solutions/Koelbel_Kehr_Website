@@ -30,18 +30,13 @@ export default function DatenschutzPage() {
             <h2 className="text-xl font-semibold text-foreground mb-4">2. Verantwortliche Stelle</h2>
             <p className="text-muted-foreground">Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
             <p className="text-muted-foreground mt-4">
-              Schornsteinfeger Meisterbetrieb
+              Kölbel Kehr GmbH i.Gr.
               <br />
-              Thomas Müller
+              GF Josua Kölbel
               <br />
-              Musterstraße 12
+              Mergenthalerallee 73-75
               <br />
-              12345 Musterstadt
-              <br />
-              <br />
-              Telefon: +49 (0) 123 456 789
-              <br />
-              E-Mail: info@schornsteinfeger-meister.de
+              65760 Eschborn
             </p>
           </section>
 
