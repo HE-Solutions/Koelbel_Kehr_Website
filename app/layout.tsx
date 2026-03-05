@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "Feuerstättenprüfung",
     "Energieberatung",
   ],
+  verification: {
+    google: "FUpmxwbcTTp1FrNTglLZkVxcrMimX40mL1AqLh5oVWc",
+  },
   icons: {
     icon: "images/schornsteinfeger-logo.png",
     apple: "images/schornsteinfeger-logo-apple.png",
