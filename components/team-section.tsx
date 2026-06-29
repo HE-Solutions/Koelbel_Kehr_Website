@@ -87,6 +87,33 @@ export function TeamSection() {
                     </div>
                 </div>
 
+                <div className="container mx-auto px-4 relative z-10 mt-16">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="relative lg:order-1 order-2">
+                            <div
+                                className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-innung-red/10">
+                                <img
+                                    src="moris_doss.jpeg"
+                                    alt="Moris Che Doß"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="lg:order-2 order-1">
+                            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-tight">
+                                Moris Che Doß
+                            </h2>
+                            <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
+                                Hallo, mein Name ist <b>Moris</b>. Seit mittlerweile sechs Jahren arbeite ich mit Leidenschaft als <b>Schornsteinfeger</b>. An meinem Beruf schätze ich besonders die abwechslungsreiche Arbeit an der frischen Luft sowie den täglichen Kontakt mit den unterschiedlichsten Menschen. Mir macht es großen Spaß, Kunden zu beraten, Lösungen zu finden und durch meine Arbeit einen Beitrag zur Sicherheit und Energieeffizienz ihrer Gebäude zu leisten.
+                            </p>
+                            <p className="text-muted-foreground mt-4 text-lg leading-relaxed text-pretty">
+                                Ich habe mich für den Beruf des Schornsteinfegers entschieden, weil ich gerne praktisch arbeite, den direkten Kontakt zu Menschen mag und jeden Tag neue Herausforderungen erlebe. Für mich ist es ein Beruf mit Verantwortung, viel Abwechslung und einer sinnvollen Aufgabe. Genau diese Mischung motiviert mich jeden Tag aufs Neue und macht meinen Beruf für mich so besonders.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 {/*
                 <p className="text-muted-foreground mb-8 text-lg leading-relaxed text-pretty"></p>
 
