@@ -1,10 +1,6 @@
-"use client"
-
-import { useState } from "react"
-import { ChevronLeft, ChevronRight, Lightbulb, Thermometer, FileText, Wrench } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Lightbulb, Thermometer, FileText } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
+import { MobileCarousel } from "@/components/mobile-carousel"
 
 const beratungItems = [
   {
@@ -33,16 +29,6 @@ const beratungItems = [
 ]
 
 export function BeratungSection() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % beratungItems.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + beratungItems.length) % beratungItems.length)
-  }
-
   return (
     <section
       id="beratung"
@@ -79,63 +65,22 @@ export function BeratungSection() {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden">
-          <div className="relative overflow-hidden">
-            <div
-              className="flex transition-transform duration-300 ease-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {beratungItems.map((item) => (
-                <div key={item.title} className="w-full flex-shrink-0 px-2">
-                  <Card className="bg-card border-innung-green/20">
-                    <CardContent className="p-6">
-                      <div className="w-12 h-12 bg-innung-green/20 rounded-xl flex items-center justify-center mb-4">
-                        <item.icon className="h-6 w-6 text-green-700" />
-                      </div>
-                      <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                    </CardContent>
-                  </Card>
+        <MobileCarousel
+          activeDotClassName="bg-innung-green"
+          inactiveDotClassName="bg-innung-green/30"
+          buttonClassName="border-innung-green/30 hover:bg-innung-green/10 bg-transparent"
+          slides={beratungItems.map((item) => (
+            <Card key={item.title} className="bg-card border-innung-green/20">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-innung-green/20 rounded-xl flex items-center justify-center mb-4">
+                  <item.icon className="h-6 w-6 text-green-700" />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Controls */}
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={prevSlide}
-              className="border-innung-green/30 hover:bg-innung-green/10 bg-transparent"
-              aria-label="Vorheriger Eintrag"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </Button>
-            <div className="flex gap-2">
-              {beratungItems.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={cn(
-                    "w-2.5 h-2.5 rounded-full transition-colors",
-                    index === currentIndex ? "bg-innung-green" : "bg-innung-green/30",
-                  )}
-                  aria-label={`Gehe zu Eintrag ${index + 1}`}
-                />
-              ))}
-            </div>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={nextSlide}
-              className="border-innung-green/30 hover:bg-innung-green/10 bg-transparent"
-              aria-label="Nächster Eintrag"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </Button>
-          </div>
-        </div>
+                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        />
       </div>
     </section>
   )

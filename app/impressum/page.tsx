@@ -19,7 +19,7 @@ export default function ImpressumPage() {
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-4">Angaben gemäß § 5 TMG</h2>
             <p className="text-muted-foreground">
-              Kölbel Kehr GmbH i.Gr.
+              Kölbel Kehr GmbH
               <br />
               GF Josua Kölbel
               <br />

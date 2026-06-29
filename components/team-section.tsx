@@ -1,5 +1,5 @@
-import {Card, CardContent} from "@/components/ui/card"
-import { DownloadIcon, Users} from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { DownloadIcon, Users } from "lucide-react"
 
 const newspaperArticles = [
     {
@@ -37,6 +37,60 @@ const teamMembers = [
   }
 ]
 
+function MemberImage({ src, alt }: { src: string; alt: string }) {
+    return (
+        <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-innung-red/10">
+            <img src={src} alt={alt} className="w-full h-full object-cover" />
+        </div>
+    )
+}
+
+function MemberTitle({ name }: { name: string }) {
+    return (
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-tight">
+            {name}
+        </h2>
+    )
+}
+
+function JosuaBody() {
+    return (
+        <>
+            <p className="text-muted-foreground mb-8 text-lg leading-relaxed text-pretty">
+                Ich, <b>Josua Kölbel</b>, bin Schornsteinfegermeister und Geschäftsführer der <b>Kölbel Kehr GmbH</b>. Meine Gesellenprüfung legte ich nach mehrfacher Verkürzung der Regellehrzeit auf unter zwei Jahre im Juli 2024 als Innungsbester ab und erreichte im anschließenden Leistungswettbewerb der Bestgesellen auf Landesebene den ersten Platz. Den Meistertitel erlangte ich nach erfolgreichem Ablegen der Meisterprüfung im Dezember des darauffolgenden Jahres; der Meisterbrief wurde mir am 24. Januar 2026 feierlich überreicht. Durch meine aktuelle und praxisnahe Ausbildung bin ich fachlich auf dem neuesten Stand der Technik und stehe für <b>Qualität</b>, <b>Kompetenz</b> und moderne Lösungen im <b>Schornsteinfegerhandwerk</b>.
+            </p>
+            <ul className="space-y-4">
+                {newspaperArticles.map((article) => (
+                    <li key={article.name} className="flex items-start gap-3">
+                        <div className="w-6 h-6 bg-innung-red/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                            <a href={article.pdf_link}><DownloadIcon className="h-4 w-4 text-innung-red" /></a>
+                        </div>
+                        <a className="text-foreground" href={article.link}>{article.name}</a>
+                    </li>
+                ))}
+            </ul>
+        </>
+    )
+}
+
+function MorisBody() {
+    return (
+        <>
+            <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
+                Hallo, mein Name ist <b>Moris</b>. Seit mittlerweile sechs Jahren arbeite ich mit Leidenschaft als <b>Schornsteinfeger</b>. An meinem Beruf schätze ich besonders die abwechslungsreiche Arbeit an der frischen Luft sowie den täglichen Kontakt mit den unterschiedlichsten Menschen. Mir macht es großen Spaß, Kunden zu beraten, Lösungen zu finden und durch meine Arbeit einen Beitrag zur Sicherheit und Energieeffizienz ihrer Gebäude zu leisten.
+            </p>
+            <p className="text-muted-foreground mt-4 text-lg leading-relaxed text-pretty">
+                Ich habe mich für den Beruf des Schornsteinfegers entschieden, weil ich gerne praktisch arbeite, den direkten Kontakt zu Menschen mag und jeden Tag neue Herausforderungen erlebe. Für mich ist es ein Beruf mit Verantwortung, viel Abwechslung und einer sinnvollen Aufgabe. Genau diese Mischung motiviert mich jeden Tag aufs Neue und macht meinen Beruf für mich so besonders.
+            </p>
+        </>
+    )
+}
+
+const memberSlides = [
+    { name: "Josua Kölbel", image: "josua_koelbel.jpg", Body: JosuaBody, imageFirst: false },
+    { name: "Moris Che Doß", image: "moris_doss.jpeg", Body: MorisBody, imageFirst: true },
+]
+
 export function TeamSection() {
     return (
         <section id="team" className="py-20 md:py-32 bg-background">
@@ -53,65 +107,48 @@ export function TeamSection() {
                     </p>
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-tight">
-                                Josua Kölbel
-                            </h2>
-                            <p className="text-muted-foreground mb-8 text-lg leading-relaxed text-pretty">
-                                Ich, <b>Josua Kölbel</b>, bin Schornsteinfegermeister und Geschäftsführer der <b>Kölbel Kehr GmbH</b>. Meine Gesellenprüfung legte ich nach mehrfacher Verkürzung der Regellehrzeit auf unter zwei Jahre im Juli 2024 als Innungsbester ab und erreichte im anschließenden Leistungswettbewerb der Bestgesellen auf Landesebene den ersten Platz. Den Meistertitel erlangte ich nach erfolgreichem Ablegen der Meisterprüfung im Dezember des darauffolgenden Jahres; der Meisterbrief wurde mir am 24. Januar 2026 feierlich überreicht. Durch meine aktuelle und praxisnahe Ausbildung bin ich fachlich auf dem neuesten Stand der Technik und stehe für <b>Qualität</b>, <b>Kompetenz</b> und moderne Lösungen im <b>Schornsteinfegerhandwerk</b>.
-                            </p>
-                            <ul className="space-y-4">
-                                {newspaperArticles.map((article) => (
-                                    <li key={article.name} className="flex items-start gap-3">
-                                        <div className="w-6 h-6 bg-innung-red/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                                            <a href={article.pdf_link}><DownloadIcon className="h-4 w-4 text-innung-red" /></a>
-                                        </div>
-                                        <a className="text-foreground" href={article.link}>{article.name}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                {/* Team members stacked underneath each other */}
+                <div className="space-y-16">
+                    {memberSlides.map((member) => {
+                        const Body = member.Body
+                        return (
+                            <div key={member.name} className="container mx-auto px-4 relative z-10">
+                                {/* Mobile: title, image, then text */}
+                                <div className="md:hidden">
+                                    <MemberTitle name={member.name} />
+                                    <div className="mb-8">
+                                        <MemberImage src={member.image} alt={member.name} />
+                                    </div>
+                                    <Body />
+                                </div>
 
-                        <div className="relative">
-                            <div
-                                className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-innung-red/10">
-                                <img
-                                    src="josua_koelbel.jpg"
-                                    alt="Josua Kölbel"
-                                    className="w-full h-full object-cover"
-                                />
+                                {/* Desktop: two columns */}
+                                <div className="hidden md:grid lg:grid-cols-2 gap-16 items-center">
+                                    {member.imageFirst ? (
+                                        <>
+                                            <div className="relative">
+                                                <MemberImage src={member.image} alt={member.name} />
+                                            </div>
+                                            <div>
+                                                <MemberTitle name={member.name} />
+                                                <Body />
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div>
+                                                <MemberTitle name={member.name} />
+                                                <Body />
+                                            </div>
+                                            <div className="relative">
+                                                <MemberImage src={member.image} alt={member.name} />
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="container mx-auto px-4 relative z-10 mt-16">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="relative lg:order-1 order-2">
-                            <div
-                                className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-innung-red/10">
-                                <img
-                                    src="moris_doss.jpeg"
-                                    alt="Moris Che Doß"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="lg:order-2 order-1">
-                            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-tight">
-                                Moris Che Doß
-                            </h2>
-                            <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
-                                Hallo, mein Name ist <b>Moris</b>. Seit mittlerweile sechs Jahren arbeite ich mit Leidenschaft als <b>Schornsteinfeger</b>. An meinem Beruf schätze ich besonders die abwechslungsreiche Arbeit an der frischen Luft sowie den täglichen Kontakt mit den unterschiedlichsten Menschen. Mir macht es großen Spaß, Kunden zu beraten, Lösungen zu finden und durch meine Arbeit einen Beitrag zur Sicherheit und Energieeffizienz ihrer Gebäude zu leisten.
-                            </p>
-                            <p className="text-muted-foreground mt-4 text-lg leading-relaxed text-pretty">
-                                Ich habe mich für den Beruf des Schornsteinfegers entschieden, weil ich gerne praktisch arbeite, den direkten Kontakt zu Menschen mag und jeden Tag neue Herausforderungen erlebe. Für mich ist es ein Beruf mit Verantwortung, viel Abwechslung und einer sinnvollen Aufgabe. Genau diese Mischung motiviert mich jeden Tag aufs Neue und macht meinen Beruf für mich so besonders.
-                            </p>
-                        </div>
-                    </div>
+                        )
+                    })}
                 </div>
 
                 {/*

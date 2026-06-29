@@ -1,10 +1,6 @@
-"use client"
-
-import { useState } from "react"
-import { Leaf, Wind, SproutIcon, Trees, ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Leaf, Wind, SproutIcon, Trees } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
+import { MobileCarousel } from "@/components/mobile-carousel"
 
 const umweltItems = [
     {
@@ -48,16 +44,6 @@ const umweltItems = [
 ]
 
 export function UmweltSection() {
-    const [currentIndex, setCurrentIndex] = useState(0)
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % umweltItems.length)
-    }
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + umweltItems.length) % umweltItems.length)
-    }
-
     return (
         <section id="umwelt" className="py-20 md:py-32 relative overflow-hidden">
             {/* Blue gradient background */}
@@ -97,63 +83,22 @@ export function UmweltSection() {
                 </div>
 
                 {/* Mobile Carousel */}
-                <div className="md:hidden">
-                    <div className="relative overflow-hidden">
-                        <div
-                            className="flex transition-transform duration-300 ease-out"
-                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-                        >
-                            {umweltItems.map((item) => (
-                                <div key={item.title} className="w-full flex-shrink-0 px-2">
-                                    <Card className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                                        <CardContent className="p-6">
-                                            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                                                <item.icon className="h-6 w-6 text-white" />
-                                            </div>
-                                            <h3 className="font-semibold text-white mb-2">{item.title}</h3>
-                                            <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
-                                        </CardContent>
-                                    </Card>
+                <MobileCarousel
+                    activeDotClassName="bg-white"
+                    inactiveDotClassName="bg-white/40"
+                    buttonClassName="border-white/30 hover:bg-white/10 bg-transparent text-white"
+                    slides={umweltItems.map((item) => (
+                        <Card key={item.title} className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                            <CardContent className="p-6">
+                                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                                    <item.icon className="h-6 w-6 text-white" />
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Controls */}
-                    <div className="flex items-center justify-center gap-4 mt-6">
-                        <Button
-                            variant="outline"
-                            size="icon"
-                            onClick={prevSlide}
-                            className="border-white/30 hover:bg-white/10 bg-transparent text-white"
-                            aria-label="Vorheriger Eintrag"
-                        >
-                            <ChevronLeft className="h-5 w-5" />
-                        </Button>
-                        <div className="flex gap-2">
-                            {umweltItems.map((_, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => setCurrentIndex(index)}
-                                    className={cn(
-                                        "w-2.5 h-2.5 rounded-full transition-colors",
-                                        index === currentIndex ? "bg-white" : "bg-white/40",
-                                    )}
-                                    aria-label={`Gehe zu Eintrag ${index + 1}`}
-                                />
-                            ))}
-                        </div>
-                        <Button
-                            variant="outline"
-                            size="icon"
-                            onClick={nextSlide}
-                            className="border-white/30 hover:bg-white/10 bg-transparent text-white"
-                            aria-label="Nächster Eintrag"
-                        >
-                            <ChevronRight className="h-5 w-5" />
-                        </Button>
-                    </div>
-                </div>
+                                <h3 className="font-semibold text-white mb-2">{item.title}</h3>
+                                <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
+                            </CardContent>
+                        </Card>
+                    ))}
+                />
             </div>
         </section>
     )
